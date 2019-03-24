@@ -58,7 +58,7 @@ img {
 }
 
 #marquee span::before {
-  content: 'WELCOME!!';
+  content: 'COMING SOON!!';
   position:absolute;
   right: 8px;
   top: -7px;
