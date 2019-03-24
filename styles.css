@@ -1,1 +1,72 @@
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One');
 
+:root {
+  --orange: #b13a1a;
+  --purple: #832c76;
+  --blue: #164db0;
+  --teal: #287e9e;
+  --yellow: #e4a834;
+  --pink: #b3346c;
+}
+
+body {
+  background: var(--teal);
+  font-family: 'Fredoka One', cursive;
+  overflow-x: hidden;
+}
+
+#marquee {
+  width: 100%;
+  position: relative;
+}
+
+#marquee span {
+  animation: scroll 5s linear 0s infinite;
+  position: absolute;
+  font-size: 4em;
+  font-weight: bold;
+  color: red;
+  background: linear-gradient(to left,var(--blue),var(--purple),var(--pink),var(--orange));
+  background-size: 400%;
+  background-position: left;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-box-decoration-break: clone; 
+  box-decoration-break: clone; 
+  letter-spacing: -5px;
+  text-shadow: -6px -7px 0px var(--yellow);
+  /* -webkit-text-stroke: 1px white;  */
+}
+
+@keyframes scroll { 
+  0% {
+    transform:translate(-4.5em,0);
+    background-position: left;
+  }
+  50% {
+    background-position: right;
+  }
+  100% {
+    transform:translate(100vw,0);
+    background-position: left;
+  }
+}
+
+img {
+  position: absolute;
+  right: 0;
+}
+
+#marquee span::before {
+  content: 'WELCOME!!';
+  position:absolute;
+  right: 8px;
+  top: -7px;
+  -webkit-text-stroke: 2px black;
+  text-shadow: none;
+  background: transparent;
+}
+
+#marquee span:first-letter {
+/*   font-size: 1em; */
+}
