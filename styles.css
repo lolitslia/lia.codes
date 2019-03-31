@@ -52,11 +52,6 @@ body {
   }
 }
 
-img {
-  position: absolute;
-  right: 0;
-}
-
 #marquee span::before {
   content: 'COMING SOON!!';
   position:absolute;
@@ -68,6 +63,8 @@ img {
   background: transparent;
 }
 
-#marquee span:first-letter {
-/*   font-size: 1em; */
+.info {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
 }
