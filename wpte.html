@@ -1,0 +1,95 @@
+
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>lia.codes</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fafafa">
+  
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="scss.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+  
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  
+</head>
+
+<body class="te">
+  <div class="time">
+    <time datetime="2018-07-07"></time>
+    <div class="daynight"><i class="fas fa-moon active"></i> <i class="fas fa-sun"></i></div>
+  </div>
+  <div class="wrapper">
+    <header id="left-nav">
+        
+      <nav>
+        <ul>
+          <li><a href="interior.html#page-top"><span class="rainbow-border"></span>Home</a></li>
+          <li><a href="interior.html#about"><span class="rainbow-border"></span>About</a></li>
+          <li><a href="interior.html#links"><span class="rainbow-border"></span>Links</a></li>
+          <li><a href="interior.html#downloads"><span class="rainbow-border"></span>Downloads</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="page-top">
+      <h1 class="page-title">LIA CODES</h1>
+      <div class="intro te">
+        <div class="intro-left">
+          <h2 class="section-title">OVERVIEW</h2>
+          <p>
+            Theme Engine is a WordPress multisite meant as a subscription service for people who want a great looking website without the pricetag of a custom site. The idea is a user can sign up for Theme Engine and have access to a wide variety of highly customizable themes they can seamlessly change between.  Utilizing modules the users are able to drag and drop content to design their own pages and change details like image placement and color schemes.
+          </p>
+          <h2 class="section-title">NITTY GRITTY</h2>
+          <p>
+            The multisite starts with Genesis Framework as the parent theme and a custom child theme referred to as the “base theme”. Then in addition there is another child theme for each theme option. The base theme contains everything the themes need like functions.php, page template files, core CSS, custom post types, and all Advanced Custom Fields hardcoded to ensure content remains the same when switching between themes. That way each theme shares HTML, ACF, PHP and only has unique CSS. Then, using some unique PHP each child theme imports those files from the base theme. An example:
+          </p>
+          <div class="code">
+            define('THEME_NAME','theme-one');
+            <br>
+            define('BASE_THEME', ABSPATH.'wp-content/themes/te-base/');
+            <br>
+            require_once(BASE_THEME.'functions.php');
+            <br>
+            add_action('genesis_doctype','child_doctype');
+            <br>
+            function child_doctype(){
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;include_once(BASE_THEME.'/assets/css/style.php');
+            <br>
+            }
+          </div>
+      </div>
+        <div class="intro-right">
+          <img src="images/shoe_store.png" alt="A screenshot of a website homepage">
+          <span class="caption">a home page example of theme #4</span>
+        </div>
+      </div>
+     </section> 
+
+    <section id="gritty">
+      <h2 class="section-title">EXAMPLES</h2>
+      <img src="images/blogs_all.png" alt="Screenshots of five different website blogs side by side to show the differences in appearance">
+      <span class="caption">an example of each theme's blog page using the same html and acf but different css</span>
+      <p>
+        For the blog pages shown above;  The user has the option to select the colors on the page as well as options such as how many blogs are shown per page, what content to show between the featured image, publish date, title, excerpt, and read more button. They can even customize what the read more button says! Another example is the accordion page shown below:
+      </p>
+      <img src="images/slider_all.png" alt="Screenshots of three different visual variations using the options of the slider module">
+      <span class="caption">these three screenshots are of the same slider module with the same content- just with different options selected.</span>
+      <p>
+        This was truly one of the most fun projects I’ve worked on because of the foresight it took to plan for such interchangeable themes and the three step like structure  of the files.
+      </p>
+    </section>
+
+    <section id="links">
+      
+    </section>
+  </div>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="scripts.js"></script>
+</body>
+
+</html>
