@@ -154,8 +154,8 @@ body.enter-page::after {
   text-decoration: none;
   font-size: 4em;
   font-weight: bold;
-  color: #b1382b;
-  background: #000;
+  color: #000;
+  background: #fff;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   letter-spacing: -3px;
@@ -187,6 +187,9 @@ body.enter-page::after {
   background: transparent;
   width: 100%;
 }
+body.browser-ie #center-nav ul li a::after {
+  display: none;
+}
 
 @keyframes bgmove { 
   from {
@@ -201,6 +204,9 @@ body.enter-page::after {
   font-size: .7em;
   display: block;
   margin-bottom: 6px;
+}
+body.browser-ie .enter-info span.ie {
+  font-size: 2em;
 }
 
 .enter-info span i {
@@ -617,6 +623,7 @@ body.enter-page::after {
 }
 .list-text ul {
   margin: 0 auto;
+  padding: 0;
   display: flex;
   flex-wrap: wrap;
   list-style: none;
@@ -774,4 +781,64 @@ body.te img {
 .caption {
   display: block;
   font-size: .6em;
+}
+
+/* IE CHANGES */
+body.browser-ie section#about,
+body.browser-ie section#downloads,
+body.browser-ie section#links,
+body.browser-ie section#page-top, 
+body.browser-ie section#gritty
+{
+  width: 100%;
+}
+body.browser-ie .wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+body.browser-ie #left-nav {
+  width: 100%;
+}
+body.browser-ie #left-nav nav ul {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+}
+body.browser-ie .page-title {
+  color: #fff;
+  position: relative;
+}
+body.browser-ie .page-title::before {
+  display: none;
+}
+body.browser-ie .intro .intro-right {
+  margin: 0;
+}
+body.browser-ie  .list-icons {
+  justify-content: center;
+}
+/* EDGE CHANGES */
+body.browser-edge #cartoon .torso .neck,
+body.browser-edge #cartoon .torso .left.hand .palm,
+body.browser-edge #cartoon .torso .left.hand .thumb,
+body.browser-edge #cartoon .torso .left.hand .pointer,
+body.browser-edge #cartoon .torso .left.hand .middle,
+body.browser-edge #cartoon .torso .laptop,
+body.browser-edge #cartoon .torso .right.hand .palm,
+body.browser-edge #cartoon .torso .right.hand .pointer,
+body.browser-edge #cartoon .cat .head::after,
+body.browser-edge #cartoon .cat .arm,
+body.browser-edge #cartoon .cat .leg, 
+body.browser-edge #cartoon .torso .bicep,
+body.browser-edge #cartoon .torso .forearm,
+body.browser-edge #cartoon .head {
+  background-image: none !important;
+}
+/* FIREFOX */
+body.browser-firefox .rainbow-border::before {
+  top: 20px;
+}
+
+@media(max-width:1279px){
+
 }
