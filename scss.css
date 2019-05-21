@@ -912,3 +912,50 @@
     transform: rotate(0deg);
   }
 }
+
+
+@media(max-width:900px){
+    #cartoon .torso .bicep, 
+    #cartoon .torso .forearm,
+    #cartoon .torso .left.hand .palm,
+    #cartoon .torso .left.hand .thumb,
+    #cartoon .torso .left.hand .thumb::before,
+    #cartoon .torso .right.hand .palm,
+    #cartoon .torso .right.hand .pointer,
+    #cartoon .torso .right.hand .middle,
+    #cartoon .torso .neck,
+    #cartoon .head,
+    #cartoon .cat .head::after,
+    #cartoon .cat-body::after,
+    #cartoon .cat-body {
+      background-image: none;
+    }
+    #cartoon .torso .left.bicep::after,
+    #cartoon .torso .left.forearm::after,
+    #cartoon .torso .left.hand .palm::after,
+    #cartoon .torso .right.hand .palm::after,
+    #cartoon .torso .right.forearm::after,
+    #cartoon .torso .neck::before,
+    #cartoon .head::before,
+    #cartoon .hair-front .strand .one,
+    #cartoon .hair-front .strand .two,
+    #cartoon .hair-front .strand .three,
+    #cartoon .hair-front .strand .four {
+      background: none;
+    }
+    #cartoon .torso .right.hand .pointer {
+      box-shadow: 0 0 0 0 #000;
+    }
+    #cartoon .head .eye::after{
+      top: 13px;
+    }
+    #cartoon .head .mouth::after,
+    #cartoon .head .mouth::before,
+    #cartoon .cat .head .nose::before, 
+    #cartoon .cat .head .nose::after {
+      border-color: pink;
+    }
+    #cartoon .cat .head {
+      background: #5422bb;
+    }
+}
