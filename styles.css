@@ -22,6 +22,7 @@ body {
   background: #250e55;
   font-family: 'Open Sans', sans-serif;
   margin: 0;
+  overflow-x: hidden;
   color: white;
   font-size: 1.4em;
   -webkit-transition: all .25s linear;
@@ -413,30 +414,16 @@ body.browser-ie .enter-info span.ie {
   transition: all .25s ease;
 }
 #left-nav nav ul li a:hover::before {
-  /* left: -14px; */
-  /* animation: bordermove .5s ease-in-out 0s infinite; */
   -webkit-transform: translate(-15px, 15px);
           transform: translate(-15px, 15px);
 }
 #left-nav nav ul li a:hover::after {
-  /* right: -14px; */
-  /* animation: bordermove .5s ease-in-out 0s infinite; */
   -webkit-transform: translate(-15px, 15px);
           transform: translate(-15px, 15px);
 }
 #left-nav nav ul li a:hover .rainbow-border{
-  /* top: -14px;
-  width: calc(100% + 28px);
-  left: -14px; */
-  /* animation: bordermove .5s ease-in-out 0s infinite; */
   -webkit-transform: translate(-15px, 15px);
           transform: translate(-15px, 15px);
-}
-#left-nav nav ul li a:hover .rainbow-border::after {
-  /* bottom: -14px;
-  width: calc(100% + 28px);
-  left: -14px; */
-  /* animation: bordermove .5s ease-in-out 0s infinite; */
 }
 @-webkit-keyframes bordermove { 
   0% {
@@ -743,6 +730,7 @@ section#gritty
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  color: #250e55;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
@@ -1241,8 +1229,28 @@ body.browser-edge #cartoon .cat .arm,
 body.browser-edge #cartoon .cat .leg, 
 body.browser-edge #cartoon .torso .bicep,
 body.browser-edge #cartoon .torso .forearm,
-body.browser-edge #cartoon .head {
+body.browser-edge #cartoon .head,
+body.os-ios #cartoon .torso .neck,
+body.os-ios #cartoon .torso .left.hand .palm,
+body.os-ios #cartoon .torso .left.hand .thumb,
+body.os-ios #cartoon .torso .left.hand .pointer,
+body.os-ios #cartoon .torso .left.hand .middle,
+body.os-ios #cartoon .torso .laptop,
+body.os-ios #cartoon .torso .right.hand .palm,
+body.os-ios #cartoon .torso .right.hand .pointer,
+body.os-ios #cartoon .cat .head::after,
+body.os-ios #cartoon .cat .arm,
+body.os-ios #cartoon .cat .leg, 
+body.os-ios #cartoon .torso .bicep,
+body.os-ios #cartoon .torso .forearm,
+body.os-ios #cartoon .head, 
+body.os-ios #cartoon .cat-body::after, 
+body.os-ios #cartoon .cat-body {
   background-image: none !important;
+}
+body.os-ios #cartoon .cat .head .ears .left, 
+body.os-ios #cartoon .cat .head .ears .right{
+  background-color: #fff;
 }
 /* FIREFOX */
 body.browser-firefox .rainbow-border::before {
@@ -1335,6 +1343,17 @@ body.browser-firefox .rainbow-border::before {
     .enter-info {
         width: 75%;
         margin: 0 auto;
+        text-shadow: 2px 2px 3px black;
+    }
+    .enter-info span:first-child {
+      font-size: 1.2em;
+      width: 80%;
+      margin: 10px auto 0;
+    }
+    svg.svg-enter {
+      right: 0;
+      width: 257px;
+      height: 30px;
     }
     svg.svg-chev {
         left: 0;
@@ -1397,7 +1416,7 @@ body.browser-firefox .rainbow-border::before {
               justify-content: center;
     }
     #left-nav nav ul li a {
-      margin: 0;
+      margin: 10px;
     }
     .page-title {
       margin: 0 0 20px 0;
@@ -1448,6 +1467,7 @@ body.browser-firefox .rainbow-border::before {
       -webkit-box-pack: center;
           -ms-flex-pack: center;
               justify-content: center;
+      background: none;
     }
     .list-text {
       padding: 10px 20px;
@@ -1458,10 +1478,7 @@ body.browser-firefox .rainbow-border::before {
         padding-right: 12px;
     }
     .list-icons i {
-        margin-right: 20px;
-    }
-    .list-icons i:last-child {
-        margin: 0;
+        margin: 4px 10px;
     }
     .intro.te .intro-left {
       width: 100%;
