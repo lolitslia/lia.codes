@@ -1,13 +1,5 @@
 $(document).ready(function() {
 
-    //minmax the fake browser
-    if($('.list-text').length){
-        $('.minmax').click(function() {
-            $('.list-text').toggleClass('open');
-            $('.minmax').toggleClass('open');
-        });
-    }
-
     //show date time
     function dayTimeFormat() {
         var date = new Date;
