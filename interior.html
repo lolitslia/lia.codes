@@ -154,13 +154,14 @@
       </div>
      </section> 
 
-    <section id="about">
+    <section id="about" :class="{ 'closed': isOpen }">
       <h2 class="section-title">ABOUT</h2>
-      <div class="minmax"></div>
+      <div class="openclose" v-on:click="makeOpen" :class="{ 'closed': isOpen }"></div>
+      <div class="minmax" v-on:click="makeFull" :class="{ 'open': isFull }"></div>
       <div class="list-icons">
         <i class="fab fa-html5"></i> <i class="fab fa-css3-alt"></i> <i class="fab fa-js"></i> <i class="fab fa-sass"></i> <i class="fab fa-wordpress"></i> <i class="fab fa-github"></i> <i class="fab fa-adobe"></i>
       </div>
-      <div class="list-text">
+      <div class="list-text" :class="{ 'open': isFull }">
         <ul>
           <li>HTML 5</li>
           <li>CSS 3</li>
@@ -184,7 +185,7 @@
           <li>Patience</li>
         </ul>
       </div>
-      <div class="text">I wrote this site with HTML5, SCSS, and jQuery in Visual Studio Code. Version controlled and deployed with GitHub and Netlify.</div>
+      <div class="text">I wrote this site with HTML5, SCSS, Vue, and jQuery in Visual Studio Code. Version controlled and deployed with GitHub and Netlify.</div>
     </section>
 
     <section id="links">
@@ -275,11 +276,29 @@
       </svg>
       <span class="copyright">© 2019 Lia Stein</span>
     </footer>
-    
   </div>
+  
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
 <script src="scripts.js"></script>
 <script src="detect.js"></script>
 </body>
-
+<script>
+    var app = new Vue({
+    el: '#about',
+    data: {
+      isFull: false,
+      isOpen: false
+    },
+    methods: {
+      makeFull: function() {
+      this.isFull = !this.isFull;
+      },
+      makeOpen: function() {
+      this.isOpen = !this.isOpen;
+      }
+    }
+  })
+</script>
 </html>
