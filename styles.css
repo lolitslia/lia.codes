@@ -915,6 +915,23 @@ section#gritty
 .portfolio-item .image.theme {
   background-image: url(images/te.png);
 }
+
+.portfolio-item .image.demauriac {
+  background-image: url(images/demauriac.png);
+}
+
+.portfolio-item .image.applied {
+  background-image: url(images/applied.png);
+}
+
+.portfolio-item .image.adrian {
+  background-image: url(images/adrian.png);
+}
+
+.portfolio-item .image.amiai {
+  background-image: url(images/amiai.png);
+}
+
 .portfolio-item .title {
   font-weight: 900;
   font-size: 1.1em;
